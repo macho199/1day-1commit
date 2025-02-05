@@ -1,15 +1,34 @@
 package com.macho199.board.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/v1/board")
 public class BoardController {
 
-    @GetMapping
-    public String index() {
-        return "Hello World";
+    @GetMapping("/{id}")
+    public String get() {
+        return "get";
     }
+
+    @GetMapping
+    public String getList() {
+        return "getList";
+    }
+
+    @PostMapping
+    public String add() {
+        return "post";
+    }
+
+    @PutMapping
+    public String modify() {
+        return "put";
+    }
+
+    @DeleteMapping
+    public String delete() {
+        return "delete";
+    }
+
 }
